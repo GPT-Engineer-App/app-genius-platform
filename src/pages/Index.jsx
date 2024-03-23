@@ -37,7 +37,7 @@ const Index = () => {
           <Text fontSize="xl" textAlign="center">
             Learn to build your own applications with our comprehensive tutorials and interactive sessions.
           </Text>
-          <Button leftIcon={<FaCode />} colorScheme="blue" size="lg">
+          <Button leftIcon={<FaCode />} colorScheme="blue" size="lg" onClick={() => (window.location.href = "/create-app")}>
             Get Started
           </Button>
         </VStack>
