@@ -1,13 +1,11 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Index from "./pages/Index.jsx";
-import CreateApp from "./pages/CreateApp.jsx";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Index />} />
-        <Route path="/create-app" element={<CreateApp />} />
       </Routes>
     </Router>
   );
