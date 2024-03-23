@@ -4,8 +4,24 @@ import { Box, Heading, Text, VStack, Textarea, Button } from "@chakra-ui/react";
 const CreateApp = () => {
   const [appRequirements, setAppRequirements] = useState("");
 
-  const handleSubmit = () => {
-    console.log("App requirements submitted:", appRequirements);
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("/api/generate-app", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ requirements: appRequirements }),
+      });
+
+      if (response.ok) {
+        window.location.href = "/app-result";
+      } else {
+        console.error("Failed to generate app");
+      }
+    } catch (error) {
+      console.error("Error generating app:", error);
+    }
   };
 
   return (
